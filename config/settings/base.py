@@ -137,3 +137,7 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# shortener settings
+SHORTENER_LENGTH = env.int("SHORTENER_LENGTH", default=6)

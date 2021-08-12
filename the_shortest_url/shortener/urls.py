@@ -1,3 +1,8 @@
-from rest_framework.routers import DefaultRouter
+from rest_framework.routers import SimpleRouter
 
-router = DefaultRouter()
+from . import views
+
+router = SimpleRouter()
+
+router.register('encode', views.Encode, basename='encode')
+router.register('decode', views.Decode, basename='decode')
