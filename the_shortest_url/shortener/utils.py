@@ -1,13 +1,13 @@
 import hashlib
 import time
+from random import choice
+from typing import Union
 
 from django.conf import settings
-from random import choice
-
 from django.core.cache import cache
-from . import exceptions
-from typing import Union
 from rest_framework.reverse import reverse_lazy
+
+from . import exceptions
 
 
 def shorten(

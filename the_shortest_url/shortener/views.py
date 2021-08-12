@@ -1,7 +1,8 @@
 from rest_framework.generics import CreateAPIView, RetrieveAPIView
 from rest_framework.viewsets import GenericViewSet
-from .serializers import EncodeSerializer, DecodeSerializer
+
 from . import utils
+from .serializers import DecodeSerializer, EncodeSerializer
 
 
 class Encode(

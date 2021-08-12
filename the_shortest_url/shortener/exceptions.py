@@ -1,6 +1,6 @@
+from django.utils.translation import gettext_lazy as _
 from rest_framework import status
 from rest_framework.exceptions import APIException, NotFound
-from django.utils.translation import gettext_lazy as _
 
 
 class KeyCollisionError(APIException):
@@ -16,4 +16,3 @@ class KeyCollisionError(APIException):
 
 class URLNotFound(NotFound):
     default_detail = _("The URL you are looking for does not exist.")
-
