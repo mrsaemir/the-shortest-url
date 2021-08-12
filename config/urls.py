@@ -13,5 +13,10 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.urls import include, path
 
-urlpatterns = []
+from the_shortest_url.shortener.urls import router as shortener_router
+
+urlpatterns = [
+    path('', include(shortener_router.urls))
+]
