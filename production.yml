@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  django:
+    build:
+      context: .
+      dockerfile: ./docker/production/django/Dockerfile
+    image: the_shortest_url_production_django
+    env_file:
+      - ./.envs/.production/.django
+    ports:
+      - "5000:5000"
+    command: /start.sh
