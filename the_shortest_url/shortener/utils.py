@@ -1,8 +1,8 @@
 import hashlib
 import time
 from random import choice
-from typing import Union
 from string import ascii_lowercase, ascii_uppercase
+from typing import Union
 
 from django.conf import settings
 from django.core.cache import cache
