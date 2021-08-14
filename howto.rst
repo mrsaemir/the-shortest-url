@@ -14,3 +14,13 @@ To run API tests::
 
     docker-compose -f test.yml up
 
+
+
+To shorten a url (on develop - port 8000)::
+
+    curl -d '{"url":"https://finn.auto/"}' -H "Content-Type: application/json" -X POST http://127.0.0.1:8000/encode/
+
+
+To Decode a url::
+
+    Just click on the shortened URL :)
