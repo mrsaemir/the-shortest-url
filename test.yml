@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  django:
+    build:
+      context: .
+      dockerfile: ./docker/local/django/Dockerfile
+    image: the_shortest_url_local_django
+    container_name: django
+    volumes:
+      - .:/app:z
+    env_file:
+      - ./.envs/.local/.django
+    command: python manage.py test
+
+
