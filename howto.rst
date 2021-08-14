@@ -7,4 +7,4 @@ To build and serve backend in development mode::
 
 To build and serve backend in production mode::
 
-    docker-compose -f production.yml up
+    docker-compose -f production.yml up --build
