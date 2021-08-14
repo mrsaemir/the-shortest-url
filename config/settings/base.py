@@ -62,6 +62,16 @@ TEMPLATES = [
     },
 ]
 
+ENCODER_THROTTLE_RATE = env.int("ENCODER_THROTTLE_RATE", default=20)  # per minute
+DECODER_THROTTLE_RATE = env.int("DECODER_THROTTLE_RATE", default=20)  # per minute
+
+REST_FRAMEWORK = {
+    'DEFAULT_THROTTLE_RATES': {
+        'decode': f'{DECODER_THROTTLE_RATE}/minute',
+        'encode': f'{ENCODER_THROTTLE_RATE}/minute'
+    }
+}
+
 WSGI_APPLICATION = 'config.wsgi.application'
 
 
@@ -141,5 +151,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # shortener settings
 SHORTENER_LENGTH = env.int("SHORTENER_LENGTH", default=6)
-ENCODER_THROTTLE_RATE = env.int("ENCODER_THROTTLE_RATE", default=20)  # per minute
-DECODER_THROTTLE_RATE = env.int("DECODER_THROTTLE_RATE", default=20)  # per minute

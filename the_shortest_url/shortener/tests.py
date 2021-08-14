@@ -1,12 +1,17 @@
 from urllib import parse
 
 from django.conf import settings
+from django.core.cache import cache
 from rest_framework import status
 from rest_framework.reverse import reverse
 from rest_framework.test import APITestCase
 
 
 class URLShortenerTest(APITestCase):
+    def setUp(self) -> None:
+        # clear cache to avoid throttle tests affect other tests.
+        cache.clear()
+
     def test_encodes_decodes_valid_url(self):
         """
         Testing if the encoder can successfully shorten a url

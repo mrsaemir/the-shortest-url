@@ -1,4 +1,5 @@
 from rest_framework.generics import CreateAPIView, RetrieveAPIView
+from rest_framework.throttling import ScopedRateThrottle
 from rest_framework.viewsets import GenericViewSet
 
 from . import utils
@@ -14,6 +15,8 @@ class Encode(
     """
 
     serializer_class = EncodeSerializer
+    throttle_classes = [ScopedRateThrottle]
+    throttle_scope = "encode"
 
 
 class Decode(
@@ -25,6 +28,8 @@ class Decode(
     """
 
     serializer_class = DecodeSerializer
+    throttle_classes = [ScopedRateThrottle]
+    throttle_scope = "decode"
     lookup_field = 'key'
 
     def get_object(self):
