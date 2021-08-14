@@ -141,3 +141,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # shortener settings
 SHORTENER_LENGTH = env.int("SHORTENER_LENGTH", default=6)
+ENCODER_THROTTLE_RATE = env.int("ENCODER_THROTTLE_RATE", default=20)  # per minute
+DECODER_THROTTLE_RATE = env.int("DECODER_THROTTLE_RATE", default=20)  # per minute
